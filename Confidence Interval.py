@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.stats import t
 import pandas as pd
+from IPython.display import display
 from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set_theme(style="darkgrid")
@@ -60,10 +61,44 @@ print('Lower bound of the interval 4:', m4-s4*t_crit4/np.sqrt(len(y4)), ',' , 'U
 
 #concatenating the datasets
 alldata = pd.concat([mydata1.assign(dataset='set1'), mydata2.assign(dataset='set2'), mydata3.assign(dataset='set3'), mydata4.assign(dataset='set4')])
+df_1 = mydata1.iloc[:1000]
+df_2 = mydata1.iloc[1000:2000]
+df_3 = mydata1.iloc[2000:3000]
+df_4 = mydata1.iloc[3000:4000]
+df_5 = mydata1.iloc[4000:5000]
+df_6 = mydata1.iloc[5000:6000]
+df_7 = mydata1.iloc[6000:7000]
+df_8 = mydata1.iloc[7000:8000]
+df_9 = mydata1.iloc[8000:9000]
+df_10 = mydata1.iloc[9000:]
 
-#plotting the scatter plot
-sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=alldata, palette=['black','green', 'orange', 'blue'], legend='full' )
+
+
+#plotting the scatter plots
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=alldata, palette=["black", "red", "orange", "green"],  legend='full')
 plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_1,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_2,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_3,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_4,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_5,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_6,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_7,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_8,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_9,  legend='full')
+plt.show()
+sns.scatterplot(x='IterationNumber', y='Runtime', hue='Sleep time',  data=df_10,  legend='full')
+plt.show()
+
+
 
 
 
